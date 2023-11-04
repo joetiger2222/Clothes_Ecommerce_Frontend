@@ -1,0 +1,32 @@
+<div class="productContainer">
+  <app-header
+    style="
+      display: flex;
+      align-items: center;
+      width: calc(99% - 100px);
+      padding: 50px;
+    "
+  />
+    <div class="productDetailsLeftAndRight">
+
+        <div class="leftDiv">
+            <div class="leftDivImage">
+                <img [src]="choosenImg" class="mainImage" />
+            </div>
+            <div *ngIf="productDetails.imgsPaths.length>0" class="allImagesDiv"> 
+                <img *ngFor="let i of productDetails.imgsPaths" [src]="i.filePath" class="smallImage" (click)="changeMainImage(i.id)" />
+            </div>
+        </div>
+    
+        <div class="rightDiv">
+            <h1>Name : {{productDetails.name}}</h1>
+            <div class="descriptionDiv">
+                <h4>Description:</h4>
+                <p>{{productDetails.description}}</p>
+            </div>
+            <h2>Price : {{productDetails.price}} EGP</h2>
+            <button class="addToCartButton" (click)="addToCart()">Add To Cart</button>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,18 @@
+<div class="headerContainer">
+  <div class="headerLeftContainer">
+    <h1 class="headerLogo" (click)="goToHomePage()">Fashion</h1>
+    <div class="headerLeftMenu">
+        <!-- <p>Men</p>
+        <p>Kids</p> -->
+        <p *ngIf="checkCart()" (click)="goToHomePage()">Home</p>
+        <p>About Us</p>
+        <p>Contact Us</p>
+    </div>
+   
+  </div>
+  <div class="headerRightContainer">
+    <img *ngIf="checkCart()" src="../../assets/cart.png" (click)="goToCart()" style="cursor: pointer;" />
+    <a *ngIf="userDataHeader.userId===null" class="headerLoginBtn" href="/login">Login</a>
+    <button *ngIf="userDataHeader.userId!==null" src="../../assets/cart.png" class="headerLoginBtn" (click)="logout()">Logout</button>
+  </div>
+</div>

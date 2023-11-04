@@ -1,0 +1,64 @@
+.adminDashboardContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+
+.adminAllProducts{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 40px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.homePageSingleProduct{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+    max-width: 400px;
+    background-color: #eee;
+    padding: 20px;
+    row-gap: 20px;
+    border-radius: 10px;
+    
+  }
+
+  .productImg{
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+  }
+  .editAndDeleteDiv{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+  }
+  .editAndDeleteDiv>button{
+    width: 120px;
+    height: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    background-color: rgb(168, 66, 66);
+  }
+.addNewProductButton{
+    width: 200px;
+    height: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    background-color: rgb(168, 66, 66);
+    margin-bottom: 50px;
+}

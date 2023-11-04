@@ -1,0 +1,61 @@
+.addNewProductContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.addNewProductInner{
+    display: flex;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    background-color: #eee;
+    justify-content: space-between;
+    padding: 30px;
+}
+.addNewProductButDes{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 30px;
+}
+.inputDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 5px;
+    width: 100%;
+}
+.inputDiv>input,select{
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+}
+.addNewProductDes{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+    row-gap: 10px;
+}
+.addNewProductDes>textarea{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+
+.createButton{
+    width: 120px;
+    height: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    background-color: rgb(168, 66, 66);
+    margin-top: 50px;
+  }

@@ -1,0 +1,38 @@
+<form class="addNewProductContainer" (ngSubmit)="createNewProduct(f)" #f="ngForm">
+    <app-header
+    style="
+      display: flex;
+      align-items: center;
+      width: calc(99% - 100px);
+      padding: 50px;
+    "
+  />
+  <div class="addNewProductInner">
+    <div class="addNewProductButDes">
+        <div class="inputDiv">
+            <label>Name:</label>
+            <input name="name" ngModel>
+        </div>
+        <div class="inputDiv">
+            <label>Category:</label>
+            <select name="categoryId" ngModel>
+                <option value="1">Men</option>
+                <option value="2">Kids</option>
+            </select>
+        </div>
+        <div class="inputDiv">
+            <label>Quantity:</label>
+            <input type="number" name="quanitity" ngModel>
+        </div>
+        <div class="inputDiv">
+            <label>Price:</label>
+            <input type="number" name="price" ngModel>
+        </div>
+    </div>
+    <div class="addNewProductDes">
+        <label>Description</label>
+        <textarea name="description" ngModel></textarea>
+    </div>
+  </div>
+  <button class="createButton" type="submit">Create</button>
+</form>

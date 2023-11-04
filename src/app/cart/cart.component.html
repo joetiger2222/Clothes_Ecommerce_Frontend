@@ -1,0 +1,26 @@
+<div class="cartContainer">
+  <app-header
+    style="
+      display: flex;
+      align-items: center;
+      width: calc(99% - 100px);
+      padding: 50px;
+    "
+  />
+
+    <div class="allCartItems">
+        <div class="singleCartItem" *ngFor="let i of cartItems">
+            <img [src]="i.clotheItem.imgsPaths[0].filePath" />
+            <h3>Name : {{i.clotheItem.name}}</h3>
+            <h3>Price : {{i.clotheItem.price*i.quantity}} EGP</h3>
+            <div class="quantityDiv">
+                <button (click)="decreaseQ(i.id,i.quantity)">-</button>
+                <p>{{i.quantity}}</p>
+                <button (click)="increaseQ(i.id,i.quantity)">+</button>
+            </div>
+            <button (click)="removeFromCart(i.id)" class="removeButton">Remove</button>
+        </div>
+    </div>
+
+
+</div>

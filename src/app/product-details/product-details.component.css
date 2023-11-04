@@ -1,0 +1,92 @@
+.productContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    
+}
+.productDetailsLeftAndRight{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+
+.leftDiv{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+    row-gap: 30px;
+}
+.leftDivImage{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mainImage{
+    width: 100%;
+    max-width: 400px;
+}
+.allImagesDiv{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.smallImage{
+    width: 90%;
+    max-width: 80px;
+    border: 2px solid #da2c2d;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.rightDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #eee;
+    width: 30%;
+    border: 2px solid #da2c2d;
+    border-radius: 10px 0 0 10px;
+    padding: 20px;
+    row-gap: 20px;
+}
+
+.descriptionDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 10px;
+}
+
+.descriptionDiv>p{
+    line-height: 25px;
+    font-size: 18px;
+}
+
+.addToCartButton{
+    width: 120px;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #da2c2d;
+}
+
+
+
+h5,h1,p,h4,h3,h2,h1{
+    margin: 0;
+}

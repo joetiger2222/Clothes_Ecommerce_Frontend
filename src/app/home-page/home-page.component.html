@@ -1,0 +1,41 @@
+<div class="homePageContainer">
+  <app-header
+    style="
+      display: flex;
+      align-items: center;
+      width: calc(99% - 100px);
+      padding: 50px;
+    "
+  ></app-header>
+  <div class="landingImgContainer">
+    <!-- <img src="../../assets/p.jpeg" /> -->
+    <div class="landingImgLeft">
+      <h1 class="landingImgHeader">Start Shopping Now !</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt,
+        nulla in condimentum volutpat, nunc justo aliquam libero, non elementum
+        libero tortor sit amet ipsum. Vestibulum euismod ullamcorper risus, id
+        lacinia libero blandit nec. In vel augue nec nisi consectetur mattis.
+        Suspendisse in tellus non libero volutpat sollicitudin. Proin auctor,
+        orci sit amet convallis laoreet, libero justo dignissim quam, et
+        vulputate quam dui nec dolor. Vivamus at elit sed urna
+      </p>
+    </div>
+    <div class="landingImgDiv">
+      <img src="../../assets/suit.png" />
+    </div>
+  </div>
+  <div class="homePageProducts">
+    <div class="ourProductsHeaderContainer">
+      <h1>Our Products</h1>
+      <div></div>
+    </div>
+    <div class="homePageProductsContainer">
+      <div *ngFor="let product of allProducts" class="homePageSingleProduct" (click)="navigateToProductDetails(product.id)">
+        <img *ngIf="product.imgsPaths.length>0" [src]="product.imgsPaths[0].filePath" class="productImg" />
+        <h3>Title : {{product.name}}</h3>
+        <h3>Price : {{product.price}} EGP</h3>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="loginContainer">
+    <form class="innerLoginDIv" (ngSubmit)="register(f)" #f="ngForm">
+        <div class="inputDiv">
+            <label>Username:</label>
+            <input type="text" required ngModel name="username">
+        </div>
+        <div class="inputDiv">
+            <label>Email:</label>
+            <input type="email" required ngModel name="email" email>
+        </div>
+        <div class="inputDiv">
+            <label>Password:</label>
+            <input type="password" required ngModel name="password">
+        </div>
+        <button class="loginButton" type="submit">Register</button>
+       
+    </form>
+</div>
+

@@ -1,0 +1,23 @@
+<div class="adminDashboardContainer">
+  <app-header
+    style="
+      display: flex;
+      align-items: center;
+      width: calc(99% - 100px);
+      padding: 50px;
+    "
+  />
+  <h1>All Products</h1>
+  <button class="addNewProductButton" (click)="navigateToAddNewProduct()">Add New Product</button>
+  <div class="adminAllProducts">
+    <div *ngFor="let product of allProducts" class="homePageSingleProduct" >
+        <img *ngIf="product.imgsPaths.length>0" [src]="product.imgsPaths[0].filePath" class="productImg" />
+        <h3>Title : {{product.name}}</h3>
+        <h3>Price : {{product.price}} EGP</h3>
+        <div class="editAndDeleteDiv">
+          <button (click)="navigateToEditProduct(product.id)">Edit</button>
+          <button (click)="deleteItem(product.id)">Delete</button>
+        </div>
+      </div>
+  </div>
+</div>
