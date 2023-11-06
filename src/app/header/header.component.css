@@ -1,7 +1,8 @@
 .headerContainer {
   display: flex;
   align-items: center;
-  width: 100%
+  width: 100%;
+  padding: 30px;
 }
 
 .headerLeftContainer {
@@ -52,6 +53,31 @@
   justify-content: center;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  .headerContainer {
+    padding: 0;
+  }
+  .headerLogo {
+    font-size: 1.5em;
+  }
+  .headerLeftMenu > p {
+    font-size: 16px;
+  }
+  .headerRightContainer>img{
+    width: 30px;
+    height: 30px;
+  }
+  .headerLoginBtn{
+    font-size: 14px;
+    font-weight: normal;
+    width: 60px;
+  
+  }
+  .headerLeftMenu{
+    width: 20%;
+  }
 }
 
 h1 {

@@ -3,12 +3,12 @@
     style="
       display: flex;
       align-items: center;
-      width: calc(99% - 100px);
-      padding: 50px;
+      width: 100%;
+      
     "
   ></app-header>
   <div class="landingImgContainer">
-    <!-- <img src="../../assets/p.jpeg" /> -->
+   
     <div class="landingImgLeft">
       <h1 class="landingImgHeader">Start Shopping Now !</h1>
       <p>
@@ -22,10 +22,10 @@
       </p>
     </div>
     <div class="landingImgDiv">
-      <img src="../../assets/suit.png" />
+      <img src="../../assets/landing.png" />
     </div>
   </div>
-  <div class="homePageProducts">
+  <div class="homePageProducts" *ngIf="!isLoading">
     <div class="ourProductsHeaderContainer">
       <h1>Our Products</h1>
       <div></div>
@@ -37,5 +37,8 @@
         <h3>Price : {{product.price}} EGP</h3>
       </div>
     </div>
+  </div>
+  <div class="homePageProducts">
+    <h1>Loading Porducts...</h1>
   </div>
 </div>

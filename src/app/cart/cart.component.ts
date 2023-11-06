@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent {
-
+  isLoading:boolean =false;
   cartItems!: SingleCartItem[]
 
 
@@ -21,13 +21,16 @@ export class CartComponent {
     this.getCart();
   }
   getCart() {
+    this.isLoading=true;
     this.httpClient.get<SingleCartItem[]>(`https://jotiger12345-001-site1.gtempurl.com/api/Cart/${this.userData.userId}`).subscribe({
       next: (res) => {
-        console.log(res);
+     
         this.cartItems=res;
+        this.isLoading=false
       },
       error: (err) => {
         console.log(err);
+        this.isLoading=false
       },
     });
   }

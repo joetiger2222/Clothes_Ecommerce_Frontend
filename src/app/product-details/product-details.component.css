@@ -87,6 +87,25 @@
 
 
 
+@media only screen and (max-width: 800px) {
+    .productDetailsLeftAndRight{
+        flex-direction: column;
+        row-gap: 50px;
+    }
+    .rightDiv{
+        width: 90%;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
 h5,h1,p,h4,h3,h2,h1{
     margin: 0;
 }

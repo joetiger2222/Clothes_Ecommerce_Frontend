@@ -8,24 +8,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
+  isLoading:boolean = false;
   constructor(private http:HttpClient,private userData:UserdataService,private router:Router) {}
 
   ngOnInit() {
     this.getClothesItems();
-    console.log(this.userData)
+    
   }
 
   allProducts!:singleProduct[];
 
   getClothesItems(){
+    this.isLoading=true;
     this.http.get<singleProduct[]>( `https://jotiger12345-001-site1.gtempurl.com/api/Clothes`).subscribe({
       next:res=>{
-        console.log(res);
+       
         this.allProducts=res
-        
+        this.isLoading=false
       },
       error:err=>{
         console.log(err);
+        this.isLoading=false;
       }
     })
   }

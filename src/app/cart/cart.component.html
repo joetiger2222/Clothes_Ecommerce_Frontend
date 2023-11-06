@@ -8,7 +8,7 @@
     "
   />
 
-    <div class="allCartItems">
+    <div class="allCartItems" *ngIf="!isLoading">
         <div class="singleCartItem" *ngFor="let i of cartItems">
             <img [src]="i.clotheItem.imgsPaths[0].filePath" />
             <h3>Name : {{i.clotheItem.name}}</h3>
@@ -21,6 +21,8 @@
             <button (click)="removeFromCart(i.id)" class="removeButton">Remove</button>
         </div>
     </div>
-
+    <div class="allCartItems" *ngIf="isLoading">
+      <h1>Loading Cart Items...</h1>
+    </div>
 
 </div>

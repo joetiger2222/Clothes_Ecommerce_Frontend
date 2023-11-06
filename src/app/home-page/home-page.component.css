@@ -38,8 +38,7 @@
   width: 40%;
 }
 .landingImgDiv > img {
-  width: 500px;
-  height: 500px;
+  width: 100%;
 }
 
 .homePageProducts {
@@ -89,10 +88,28 @@
 }
 
 
+@media only screen and (max-width:935px) {
+  .landingImgContainer{
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .landingImgLeft{
+    width: 90%;
+    padding: 0;
+  }
+  
+ 
+  }
 
 
-
-
+  @media only screen and (max-width:527px) {
+    .landingImgHeader{
+      font-size: 30px;
+      align-self: center;
+    } 
+   
+    }
+  
 
 
 
