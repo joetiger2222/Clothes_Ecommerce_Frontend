@@ -37,10 +37,14 @@ export class CartComponent {
 
 
   increaseQ(id:string, quantity:number){
+    const itemIndex=this.cartItems.findIndex(c=>c.id==id)
+    if(itemIndex!==-1){
+      this.cartItems[itemIndex].quantity++;
+    }
     this.httpClient.put(`https://jotiger12345-001-site1.gtempurl.com/api/Cart/${id}`,{quantity:quantity+1}).subscribe({
       next:res=>{
-        console.log(res);
-        this.getCart();
+        // console.log(res);
+        // this.getCart();
       },
       error: (err) => {
         alert('Error')
@@ -49,10 +53,17 @@ export class CartComponent {
   }
 
   decreaseQ(id:string, quantity:number){
+    if(quantity<2){
+      return;
+    }
+    const itemIndex=this.cartItems.findIndex(c=>c.id==id)
+    if(itemIndex!==-1){
+      this.cartItems[itemIndex].quantity--;
+    }
     this.httpClient.put(`https://jotiger12345-001-site1.gtempurl.com/api/Cart/${id}`,{quantity:quantity-1}).subscribe({
       next:res=>{
-        console.log(res);
-        this.getCart();
+        // console.log(res);
+        // this.getCart();
       },
       error: (err) => {
         alert('Error')

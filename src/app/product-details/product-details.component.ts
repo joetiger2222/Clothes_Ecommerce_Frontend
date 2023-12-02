@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserdataService } from '../userdata.service';
+import { singleProduct } from '../models/SingleProduct.model';
 
 @Component({
   selector: 'app-product-details',
@@ -12,19 +13,19 @@ export class ProductDetailsComponent {
   id:number=0;
   productDetails!:singleProduct
   choosenImg!:string
-  constructor(private activatedRoute:ActivatedRoute,private httpClient:HttpClient,private userData:UserdataService){}
+  _userData:UserdataService
+  constructor(private activatedRoute:ActivatedRoute,private httpClient:HttpClient,private userData:UserdataService){this._userData=this.userData}
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
       this.id=params['id'];
     })
-    console.log(this.id);
+    
     this.getProductDetails(this.id)
   }
 
   getProductDetails(id:number){
     this.httpClient.get<singleProduct>(`https://jotiger12345-001-site1.gtempurl.com/api/Clothes/${id}`).subscribe({
       next:res=>{
-        console.log(res);
         this.productDetails=res;
         this.choosenImg=res.imgsPaths[0].filePath
       },
@@ -51,6 +52,7 @@ export class ProductDetailsComponent {
       },
       error:err=>{
         console.log(err);
+        alert('You Need To Login First')
       }
     })
   }
@@ -58,12 +60,3 @@ export class ProductDetailsComponent {
 }
 
 
-interface singleProduct{
-  id:number;
-  name:string;
-  description:string;
-  quantity:number;
-  price:number;
-  imgsPaths:[{id:string, name:string,filePath:string,clotheItemId:number}]
-
-}

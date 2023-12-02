@@ -1,4 +1,4 @@
-<div class="loginContainer">
+<div class="loginContainer" *ngIf="!isLoading">
     <form class="innerLoginDIv" (ngSubmit)="register(f)" #f="ngForm">
         <div class="inputDiv">
             <label>Username:</label>
@@ -17,3 +17,6 @@
     </form>
 </div>
 
+<div class="loginContainer" *ngIf="isLoading">
+    <h1>Loading...</h1>
+</div>

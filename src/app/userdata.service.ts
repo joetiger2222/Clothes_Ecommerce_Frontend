@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserdataService {
-  private userIdKey = 'userId';
-  private userRoleKey = 'role';
+  private userIdKey = 'clothsWebstiteUserId';
+  private userRoleKey = 'clothsWebstiteRole';
 
   public get userId(): string | null {
     return localStorage.getItem(this.userIdKey);

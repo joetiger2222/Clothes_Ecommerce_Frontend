@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+  isLoading:boolean=false;
   constructor(private httpClient:HttpClient,private userData:UserdataService,private router:Router){}
 
   register(registerData:NgForm){
@@ -27,15 +28,17 @@ export class RegisterComponent {
       password:registerData.value.password,
       roles:["Reader"]
     }
-
+    this.isLoading=true
     this.httpClient.post(`https://jotiger12345-001-site1.gtempurl.com/api/Auth/Register`,userToAdd).subscribe({
       next:res=>{
         alert('User Registration Success,please login')
+        this.isLoading=false
         this.router.navigate(['/login'])
       },
       error:err=>{
         console.log(err);
         alert('User Registration Success,please login')
+        this.isLoading=false
         this.router.navigate(['/login'])
       }
     })

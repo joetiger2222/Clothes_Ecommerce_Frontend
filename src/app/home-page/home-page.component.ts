@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserdataService } from '../userdata.service';
 import { Router } from '@angular/router';
+import { singleProduct } from '../models/SingleProduct.model';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -42,12 +43,3 @@ export class HomePageComponent {
 
 }
 
-interface singleProduct{
-    id:number;
-    name:string;
-    description:string;
-    quantity:number;
-    price:number;
-    imgsPaths:[{id:string, name:string,filePath:string,clotheItemId:number}]
-
-}

@@ -10,11 +10,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
+  isLoading:boolean = false;
   constructor(private httpClient:HttpClient,private userData:UserdataService,private router:Router){}
 
   loginAdmin(loginData:NgForm){
-    console.log(loginData.value)
+    const login=loginData.value
     if(loginData.form.controls['email']['invalid']){
       alert('Please enter a valid email')
       return;
@@ -23,15 +23,17 @@ export class LoginComponent {
       alert('Please enter a valid password')
       return;
     }
-    this.httpClient.post<{userId:string,role:string}>(`https://jotiger12345-001-site1.gtempurl.com/api/Auth/Login/Admin`,loginData.value).subscribe({
+    this.isLoading=true
+    this.httpClient.post<{userId:string,role:string}>(`https://jotiger12345-001-site1.gtempurl.com/api/Auth/Login/Admin`,login).subscribe({
       next:res=>{
         this.userData.userId=res.userId;
         this.userData.userRole=res.role
         this.router.navigate(['/adminDashboard']);
+        this.isLoading=false
       },
       error:err=>{
         console.log(err);
-        this.loginUser(loginData.value)
+        this.loginUser(login)
       }
     })
     
@@ -43,10 +45,12 @@ export class LoginComponent {
         this.userData.userId=res.userId;
         this.userData.userRole=res.role
         this.router.navigate(['..']);
+        this.isLoading=false
       },
       error:err=>{
         console.log(err);
         alert('Wrong Username or Password')
+        this.isLoading=false
       }
     })
   }

@@ -25,7 +25,7 @@
                 <p>{{productDetails.description}}</p>
             </div>
             <h2>Price : {{productDetails.price}} EGP</h2>
-            <button class="addToCartButton" (click)="addToCart()">Add To Cart</button>
+            <button class="addToCartButton" (click)="addToCart()" *ngIf="this._userData.userId">Add To Cart</button>
         </div>
     </div>
 
